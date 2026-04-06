@@ -1,3 +1,10 @@
+import streamlit as st
+import streamlit.components.v1 as components
+
+st.title("Breast Cancer Assistant")
+
+# Use TRIPLE quotes (three " in a row) to wrap the HTML
+chat_code = """
 <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
 <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
 <df-messenger
@@ -6,7 +13,7 @@
   language-code="en"
   max-query-length="-1">
   <df-messenger-chat-bubble
-    chat-title="breast-cancer-chatbot">
+    chat-title="Breast Cancer Chatbot">
   </df-messenger-chat-bubble>
 </df-messenger>
 <style>
@@ -22,3 +29,7 @@
     right: 16px;
   }
 </style>
+"""
+
+# This line turns that text into a working chat bubble
+components.html(chat_code, height=600)
